@@ -11,11 +11,16 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/login' do
-
+    session[:user_id] = params[:user_id]
+    if session[:user_id] = params[:username]
+      redirect to '/account'
+    else 
+      erb :error
+    end   
   end
 
   get '/account' do
-
+    
   end
 
   get '/logout' do
